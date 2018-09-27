@@ -16,6 +16,42 @@ $(function() {
 		},500);
 	});
 	
+	$(".ack-adv-tabs-item__toggler").on('click', function () {
+
+        $(this).closest('.ack-adv-tabs-item').toggleClass('is-active');
+
+        $(this).next('.ack-adv-tabs-item__content').slideToggle('fast');
+
+	});
 	
 
+		var list = $(".img-h");
+		$(list).on('mouseenter', function () {
+			$(list).toggleClass('filter-img');
+			$(this).removeClass('filter-img');
+		}).on('mouseleave', function() {
+			$(list).removeClass('filter-img');
+		});
+
+
+
+		$('.owl-carousel').owlCarousel({
+		items:5,
+		loop:false,
+		margin:10,
+		merge:true,
+	
+		responsive:{
+		
+        
+        1000:{
+            items:4,
+		},
+		0:{
+			items:1,
+		
+	
+        },
+    }
+});
 });
