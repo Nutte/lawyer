@@ -17,12 +17,15 @@ $(function() {
 	});
 	
 	$(".ack-adv-tabs-item__toggler").on('click', function () {
-
-        $(this).closest('.ack-adv-tabs-item').toggleClass('is-active');
-
-        $(this).next('.ack-adv-tabs-item__content').slideToggle('fast');
-
-	});
+		//$(".ack-adv-tabs-item").removeClass('is-active');
+		$(this).next('.ack-adv-tabs-item__content').slideToggle('fast');
+		$(this).closest('.ack-adv-tabs-item').toggleClass('is-active');
+		
+		
+        
+		
+	}); 
+		
 	
 
 		var list = $(".img-h");
