@@ -130,10 +130,28 @@ nav.navShadow #word-mark {
 	align-items: center;
 	padding-left: 40px;
 	justify-content: space-between;
+	@include md(){
+	  display: block;
+	
+	  padding-left: 0px;
+
+	  
+	}
 	#logo {
 		height: 45px;
 		cursor: pointer;
 		transition: 0.5s;
+
+		@include md(){
+			height: 105px;
+			padding: 30px 70px;
+			
+			img{
+				margin: 0 auto;
+				
+			}
+			
+		  }
 	}
 	#slogan{
 		margin-right: 40px;
@@ -141,6 +159,20 @@ nav.navShadow #word-mark {
 		padding: 37px 50px;
 		transition: 0.5s;
 		font-family: $bold-font;
+		@include md(){
+			text-align: center;
+			font-size: 13px;
+			line-height: 17px;
+
+				padding: 0;
+				background: #fff;
+				padding: 36px 0;
+				margin-top: 40px;
+				margin: 0;
+				margin-top: -6px;
+				-webkit-box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 30px -5px rgba(0, 0, 0, 0.2);
+		  }
 
 	}
 }
