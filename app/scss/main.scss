@@ -36,7 +36,7 @@ h1{
 	font-family: $bold-font;
 	font-size: 36px;
 	color: #000;
-	margin-top: 192px;
+	
 	margin-bottom: 92px;
 	text-transform: uppercase;
 	text-align: center;
@@ -51,6 +51,8 @@ h2{
 	font-family: $bold-font;
 	font-size: 24px;
 	text-align: center;
+	padding-top:0;
+	margin-bottom: 0;
 	@include md(){
 		font-size:16px ;
 		font-size: 20px;
@@ -125,6 +127,9 @@ nav.navShadow #word-mark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+
   -webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -144,7 +149,7 @@ nav.navShadow #word-mark {
 
 		@include md(){
 			height: 105px;
-			padding: 30px 70px;
+			display: flex;
 			
 			img{
 				margin: 0 auto;
@@ -185,23 +190,27 @@ nav.navShadow #word-mark {
 .frst-adv{
 		max-width: 915px;
 		margin: 100px auto 69px;
+		
+		
 		@include md() {
+			margin: 100px auto 29px;
 			.li-item {
 				margin-top:50px;
-				margin-left: 35px;
+				margin-left: 5px;
 				font-size: 14px;
 				line-height: 20px;
 			}
 			h1{
-				margin-top:70px; 
+				margin-top: 45px;
+				margin-bottom: 0px;
 			}
 			
 		}
 	ul{
-		list-style-image: url(../img/icons/checkbox.svg);
+		/*list-style-image: url(../img/icons/checkbox.svg);
 		&:last-child{
 			
-		}
+		}*/
 	}
 	.header-bot-frst{
 		margin-top: 35px ;
@@ -209,10 +218,7 @@ nav.navShadow #word-mark {
 	
 }
 li{
-	font-size: 18px;
-	line-height: 25px;
-
-	color: #000;
+	
 	@include md() 
 		{
 			
@@ -220,10 +226,42 @@ li{
 			line-height: 20px;
 		}
 }
+.item-on{
+	li{
+		@include md() 
+		{
+			
+			padding-bottom: 27px !important;
+		}
+		&:first-child{
+			padding-bottom: 70px !important;
+			@include md() 
+		{
+			
+			padding-bottom: 27px !important;
+		}
+		}
+		
+	}
+}
 .frst-block-list{
+	
+
 	li{
 		padding-bottom: 45px;
 		padding-left: 5px;
+		font-size: 18px;
+	line-height: 25px;
+	background: url(../img/icons/checkbox.svg) no-repeat 0 4px;
+    padding-left: 24px !important;
+    list-style: none;
+	color: #000;
+	@include md() {
+		&:last-child{
+			padding-bottom: 0px;
+		}
+	}
+		
 	span{
 		
 	}
@@ -231,7 +269,7 @@ li{
 
 }
 .right-list{
-	margin-left: 170px;
+	margin-left: 146px;
 	@include md() {
 		margin: 0;
 	}
@@ -241,14 +279,32 @@ li{
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+	background-position: 50% 50%;
+	@include md() {
+		background-size: contain;
+		-webkit-background-size: contain;
+		height: 54px;
+	}
 }
 .tree-adv{
-	padding-top: 85px;
-	padding-bottom: 85px;
-
+	padding-top: 87px;
+	padding-bottom: 82px;
+	@include md(){
+		padding-top: 29px;
+		padding-bottom: 60px;
+		.one-hr{
+			
+		}
+	}
+	.one-hr{
+		margin-bottom: 71px !important;
+		@include md(){
+			margin-bottom: 30px !important;
+		}
+	}
 	h2{
 		text-align: left;
+		margin-bottom: 17px;
 		@include md(){
 			margin-top: 30px;
 		}
@@ -259,10 +315,12 @@ li{
 			margin-bottom: 35px;
 		}
 	}
+	
 	hr{
 		
 		float:left;
-		margin-bottom: 71px;
+		margin-bottom: 40px;
+		
 		margin-top: 0px;
 		margin-right: 100%;
 		@include md(){
@@ -451,7 +509,9 @@ li{
 		margin-top:35px;
 	}
 }
+//tabs
 
+//tabs
 //modal
 
 .box-modal_close{
@@ -467,8 +527,16 @@ li{
 
 .recommendations-adv{
 	margin-bottom: 158px;
+	@include md() {
+		margin-bottom: 66px;
+	}
 	h1{
+		margin-top:82px;
 		margin-bottom: 110px;
+		@include md() {
+			margin-top:82px;
+			margin-bottom: 20px;
+		}
 	}
 	.rec-d{
 		&:hover{
@@ -482,7 +550,11 @@ fieldset{
 	border: 3px solid;
 	padding-left: 40px;
 	width: 100%;
+	margin-bottom: 124px;
 	@include md() {
+		.row{
+			padding: 0 30px;
+		}
 		padding: 0;
 	}
 	.content-foot{
@@ -490,13 +562,23 @@ fieldset{
 		padding: 0 25px;
 		@include md() {
 			padding: 0;
-    		margin: 100px auto;
+    		margin: 0px auto;
     		text-align: center;
 		}
+		.adress{
+			p{
+				&:nth-child(2){
+					margin-bottom: 41px;
+				}
+			}
+			
+		}
 		.logo-foot{
+			@include md() {
+				display: none;
+			}
 			p{
 				margin: 90px 0;
-
 			}
 		}
 	}
@@ -519,6 +601,10 @@ fieldset{
 }
 legend{
 	width: auto;
+	@include md() {
+		margin: 0 auto;
+		
+	}
 	h1{
 		margin: 0;
 		padding: 0 30px;
@@ -543,6 +629,24 @@ legend{
 	-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.09);
 	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.09);
 	margin-bottom: 10px;
+	margin: 10px auto;
+    width: 251px;
+    height: 149px;
+	display: flex;
+		justify-content: center;
+		align-items:center;
+		.m-dotted{
+			border: none !important;
+		}
+		a span{
+			height: 149px;
+			border: none !important;
+		}
+	img{
+		display: block;
+		margin: 0 auto;
+		
+	}
 	}
 	.icon-link-l{
 		margin-top: 22px;
@@ -575,10 +679,28 @@ legend{
 
 	}
 }
+.owl-item{
+	width: 262px !important;
+	margin-right: 21px !important;
+	@include md(){
+		width: 345px !important;
+    	margin-right: 10px !important;
+	}
+	&:last-child{
+		margin-right: 0px !important;
+		
+	}
+}
+.owl-stage{
+	width: 1170px !important;
+	@include md(){
+		width: 1420px !important;
+	}
+}
 .about-us-adv{
 	.about-us-b{
-		width: 264px;
-		height: 262px;
+		width: 262px;
+		height: 264px;
 		-webkit-box-shadow: 0px 17px 29px 0px rgba(0,0,0,0.1);
 		-moz-box-shadow: 0px 17px 29px 0px rgba(0,0,0,0.1);
 		box-shadow: 0px 17px 29px 0px rgba(0,0,0,0.1);
@@ -589,8 +711,10 @@ legend{
 					
 					
 				&:first-child{
-					margin-left: 56px;
+					margin-left: 56px !important;
+					
 				}
+				
 			}
 			
 		}
@@ -598,6 +722,9 @@ legend{
 		
 	}
 	h1{
+
+		margin-top: 110px;
+		margin-bottom: 35px;
 		@include md() {
 			
 			margin-top:35px;
