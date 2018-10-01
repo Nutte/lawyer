@@ -164,8 +164,8 @@ nav.navShadow #word-mark {
 		transition: 0.5s;
 		font-family: $bold-font;
 		@include md(){
+			text-transform: uppercase;
 			text-align: center;
-			font-size: 13px;
 			line-height: 17px;
 			padding: 0;
 			background: #fff;

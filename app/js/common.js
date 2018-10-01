@@ -87,7 +87,7 @@ $(function() {
 
 	function waypoints() {
 
-		var slogan = $(".slogan"),
+		var slogan = $("#slogan"),
 			waypoint = $('[data-waypoint]'); 
 		
 		if ( $(window).width() < 992 ) {
