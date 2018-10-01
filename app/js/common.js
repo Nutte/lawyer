@@ -29,22 +29,32 @@ $(function() {
 	  function f_acc(){
 
       var th = $(this),
-            item = th.closest('.ack-adv-tabs');
+			item = th.closest('.ack-adv-tabs'),
+			itemMaxHeight = 0;
 
             item.toggleClass('is-active').siblings().removeClass('is-active');
 
-            th.next().slideToggle('fast').addClass('is-opened').closest(item).siblings().find('.is-opened').slideUp('fast').removeClass('is-opened');
+			th.next().slideToggle('fast').addClass('is-opened').closest(item).siblings().find('.is-opened').slideUp('fast').removeClass('is-opened');
+
+			item.siblings().each(function () { 
+
+				if ( $(this).outerHeight() > itemMaxHeight ) {
+
+					itemMaxHeight = $(this).outerHeight();
+
+				} 
+
+			 });
+
+			if ( $(window).width() < 993 ) {
+
+				$('html,body').animate({
+					scrollTop: $(this).offset().top - itemMaxHeight - 100
+				}, 200);
+
+			} 
 
      }
-
-	 /* $('#accordeon .acc-head').on('click', function() {
-		if (!$(this).hasClass('is-active')) { // если класса нет
-		  $(this).closest('.ack-adv-tabs-item').addClass('is-active'); // добавляем класс
-		} else { // если есть
-		  $(this).closest('.ack-adv-tabs-item').toggleClass('is-active');x // убираем класс
-		 
-		}
-	  }); */
 
 		var list = $(".img-h");
 		$(list).on('mouseenter', function () {
@@ -73,4 +83,35 @@ $(function() {
         },
     }
 });
+
+
+	function waypoints() {
+
+		var slogan = $(".slogan"),
+			waypoint = $('[data-waypoint]'); 
+		
+		if ( $(window).width() < 992 ) {
+
+			$(window).on('scroll', function() {
+
+				slogan.text( 'Сложно, дорого, но помочь можно' );
+	
+				waypoint.each(function () {
+	
+					if ( $(window).scrollTop() >= $(this).offset().top - 135 && $(window).scrollTop() < $(this).offset().top + $(this).outerHeight() ) {
+	
+						slogan.text( $(this).attr('data-text') );
+		
+					} 
+	
+				});
+	
+			});
+
+		}
+
+	}
+
+	waypoints();
+
 });
