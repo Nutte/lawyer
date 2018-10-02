@@ -103,6 +103,12 @@ $(function() {
 						slogan.text( $(this).attr('data-text') );
 		
 					} 
+
+					if($(window).scrollTop() + $(window).height() > $(document).height() - 40) {
+
+						slogan.text( 'Сложно, дорого, но помочь можно' );
+
+					}
 	
 				});
 	
@@ -113,5 +119,13 @@ $(function() {
 	}
 
 	waypoints();
+		  
+
+	$('.box-modal').on('click', function () {
+
+		$.arcticmodal('close');
+		
+	});
+
 
 });
