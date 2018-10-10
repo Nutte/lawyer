@@ -187,17 +187,10 @@ nav.navShadow #word-mark {
 }
 .frst-adv{
 		max-width: 915px;
-		margin: 100px auto 69px;
-		
-		
+		margin: 100px auto 0px;
+
 		@include md() {
 			margin: 100px auto 29px;
-			.li-item {
-				margin-top:50px;
-				margin-left: 5px;
-				font-size: 14px;
-				line-height: 20px;
-			}
 			h1{
 				margin-bottom: 0px;
 			}
@@ -214,6 +207,14 @@ nav.navShadow #word-mark {
 	}
 	
 }
+
+.li-item {
+	margin-bottom: 69px;
+	margin-left: 5px;
+	font-size: 14px;
+	line-height: 20px;
+}
+
 li{
 	
 	@include md() 
